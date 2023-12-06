@@ -30,6 +30,35 @@ Migration database
 php artisan migrate:fresh --seed
 ```
 
+## Push & Pull
+
+Pull
+
+```bash
+git pull origin <namabranch>
+```
+
+Push
+
+```bash
+git add .
+git commit -m "Message commitnya"
+git push -u origin <namabranch>
+```
+
+Atau jika ingin perfile commitnya.
+
+```bash
+git add <namafile>
+git commit -m "Message commit"
+```
+
+kemudian push
+
+```bash
+git push -u origin <namabranch>
+```
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
