@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Aduan;
 use App\Models\Bakpk;
+use App\Models\Mahasiswa;
 use App\Models\TransaksiAduan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -197,5 +198,28 @@ class BakpkController extends Controller
         // Bakpk::create(array_merge($data, ['key' => "value",]));
         session()->flash('flash_message', 'Pendaftaran akun berhasil, silahkan login');
         return redirect('/bakpk/login');
+    }
+
+    public function mahasiswa_register()
+    {
+        return view('bakpk.register.register_mahasiswa');
+    }
+
+    public function mahasiswa_store(Request $request)
+    {
+        if(Mahasiswa::where('nim', '=', $request->nim)->first()) {
+            session()->flash('flash_message', 'NIM sudah terdaftar');
+            return redirect('/bakpk/register/mahasiswa');
+        }
+        $validate = $request->validate([
+            'nim' => 'required|unique:mahasiswa,nim',
+            'password' => 'required',
+        ]);
+        $data = $request->except('password');
+        $data['password'] = Hash::make($request->password);
+        // Mahasiswa::create($data);
+        Mahasiswa::create(array_merge($data, ['status_mahasiswa' => "Aktif",]));
+        session()->flash('flash_message', 'Pendaftaran akun berhasil, silahkan login');
+        return redirect('/bakpk/');
     }
 }

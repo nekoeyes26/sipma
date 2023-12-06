@@ -22,6 +22,20 @@
                     <a href="#" class="nav-item nav-link">Pengaduan</a>
                     <a href="#" class="nav-item nav-link">Tentang</a>
                     <a href="#" class="nav-item nav-link">Akun</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Akun</a>
+                        <div class="dropdown-menu rounded">
+                            @if (Auth::guard('guard1')->check() || Auth::guard('guard2')->check() || Auth::guard('guard3')->check())
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    <button class="dropdown-item">Logout</button>
+                                </form>
+                            @else
+                                <a href="#" class="dropdown-item">Login</a>
+                            @endif
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>

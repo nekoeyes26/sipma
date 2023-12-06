@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminAccountController;
 use App\Http\Controllers\BakpkController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\EventController@home')->name('home');
+Route::get('/', 'App\Http\Controllers\MahasiswaController@home')->name('home');
+Route::get('/login', [MahasiswaController::class, 'login'])->name('mahasiswa.login')->middleware('guest');
+Route::post('/login', [MahasiswaController::class, 'authenticate']);
+Route::post('/logout', [MahasiswaController::class, 'logout']);
+Route::get('/pengaduan', 'App\Http\Controllers\MahasiswaController@pengaduan')->name('pengaduan');
 
+Route::get('/bakpk', 'App\Http\Controllers\BakpkController@aduan_baru');
 Route::get('/bakpk/aduan', 'App\Http\Controllers\BakpkController@aduan_baru');
 Route::get('/bakpk/aduan/baru', 'App\Http\Controllers\BakpkController@aduan_baru')->name('bakpk.aduan.baru');
 Route::get('/bakpk/aduan/level1', 'App\Http\Controllers\BakpkController@aduan_level_1')->name('bakpk.aduan.level1');
@@ -33,3 +39,5 @@ Route::post('/bakpk/login', [BakpkController::class, 'authenticate']);
 Route::post('/bakpk/logout', [BakpkController::class, 'logout']);
 Route::get('/bakpk/register/bakpk', [BakpkController::class, 'bakpk_register'])->name('bakpk.register.bakpk');
 Route::post('/bakpk/register/bakpk', [BakpkController::class, 'bakpk_store'])->name('bakpk.store.bakpk');
+Route::get('/bakpk/register/mahasiswa', [BakpkController::class, 'mahasiswa_register'])->name('bakpk.register.mahasiswa');
+Route::post('/bakpk/register/mahasiswa', [BakpkController::class, 'mahasiswa_store'])->name('bakpk.store.mahasiswa');

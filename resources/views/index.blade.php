@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Orland - Beli Tiket Event dan Jual Eventmu Sendiri</title>
+    <title>SIPMA</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     @include('stylesheet')
 </head>
