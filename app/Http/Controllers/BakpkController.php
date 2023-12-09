@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Aduan;
 use App\Models\Bakpk;
 use App\Models\Mahasiswa;
+use App\Models\PimpinanKampus;
 use App\Models\TransaksiAduan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -219,6 +220,29 @@ class BakpkController extends Controller
         $data['password'] = Hash::make($request->password);
         // Mahasiswa::create($data);
         Mahasiswa::create(array_merge($data, ['status_mahasiswa' => "Aktif",]));
+        session()->flash('flash_message', 'Pendaftaran akun berhasil, silahkan login');
+        return redirect('/bakpk/');
+    }
+
+    public function pimpinan_register()
+    {
+        return view('bakpk.register.register_pimpinan');
+    }
+
+    public function pimpinan_store(Request $request)
+    {
+        if(PimpinanKampus::where('email', '=', $request->email)->first()) {
+            session()->flash('flash_message', 'Email sudah terdaftar');
+            return redirect('/bakpk/register/pimpinan_kampus');
+        }
+        $validate = $request->validate([
+            'email' => 'required|unique:pimpinan_kampus,email',
+            'password' => 'required',
+        ]);
+        $data = $request->except('password');
+        $data['password'] = Hash::make($request->password);
+        PimpinanKampus::create($data);
+        // Bakpk::create(array_merge($data, ['key' => "value",]));
         session()->flash('flash_message', 'Pendaftaran akun berhasil, silahkan login');
         return redirect('/bakpk/');
     }

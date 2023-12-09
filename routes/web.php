@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminAccountController;
 use App\Http\Controllers\BakpkController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\PimpinanKampusController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,3 +42,11 @@ Route::get('/bakpk/register/bakpk', [BakpkController::class, 'bakpk_register'])-
 Route::post('/bakpk/register/bakpk', [BakpkController::class, 'bakpk_store'])->name('bakpk.store.bakpk');
 Route::get('/bakpk/register/mahasiswa', [BakpkController::class, 'mahasiswa_register'])->name('bakpk.register.mahasiswa');
 Route::post('/bakpk/register/mahasiswa', [BakpkController::class, 'mahasiswa_store'])->name('bakpk.store.mahasiswa');
+Route::get('/bakpk/register/pimpinan', [BakpkController::class, 'pimpinan_register'])->name('bakpk.register.pimpinan');
+Route::post('/bakpk/register/pimpinan', [BakpkController::class, 'pimpinan_store'])->name('bakpk.store.pimpinan');
+
+Route::get('/pimpinan/login', [PimpinanKampusController::class, 'login'])->name('pimpinan.login')->middleware('guest');
+Route::post('/pimpinan/login', [PimpinanKampusController::class, 'authenticate']);
+Route::post('/pimpinan/logout', [PimpinanKampusController::class, 'logout']);
+Route::get('/pimpinan', 'App\Http\Controllers\PimpinanKampusController@aduan_diterima');
+Route::get('/pimpinan/aduan', 'App\Http\Controllers\PimpinanKampusController@aduan_diterima');
