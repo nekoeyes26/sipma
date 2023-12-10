@@ -126,7 +126,7 @@ class BakpkController extends Controller
             $aduan = new TransaksiAduan();
             $aduan->id_aduan = $id;
             $aduan->id_solusi = null;
-            $aduan->id_bakpk = rand(1, 20);
+            $aduan->id_bakpk = Auth::guard('guard1')->user()->id_bakpk;
             $aduan->tindak_lanjut = null;
             $aduan->save();
         }

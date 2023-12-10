@@ -19,10 +19,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\MahasiswaController@home')->name('home');
-Route::get('/login', [MahasiswaController::class, 'login'])->name('mahasiswa.login')->middleware('guest');
+Route::get('/login', [MahasiswaController::class, 'login'])->name('mahasiswa.login')->middleware('guest:guard2');
 Route::post('/login', [MahasiswaController::class, 'authenticate']);
 Route::post('/logout', [MahasiswaController::class, 'logout']);
 Route::get('/pengaduan', 'App\Http\Controllers\MahasiswaController@pengaduan')->name('pengaduan');
+Route::post('/pengaduan/store', 'App\Http\Controllers\MahasiswaController@input_aduan')->name('aduan.store');
+Route::get('/aduan_berhasil', 'App\Http\Controllers\MahasiswaController@aduan_berhasil_dibuat')->name('aduan_berhasil_dibuat');
+Route::get('/aduan_terbaru', 'App\Http\Controllers\MahasiswaController@aduan_terbaru')->name('aduan.recent');
+Route::get('/aduan_saya', 'App\Http\Controllers\MahasiswaController@aduan_saya')->name('aduan.saya');
 
 Route::get('/bakpk', 'App\Http\Controllers\BakpkController@aduan_baru');
 Route::get('/bakpk/aduan', 'App\Http\Controllers\BakpkController@aduan_baru');
@@ -35,7 +39,7 @@ Route::get('/bakpk/aduan/dengan_solusi', 'App\Http\Controllers\BakpkController@a
 Route::post('/bakpk/aduan/update/{id}', 'App\Http\Controllers\BakpkController@aduan_update')->name('bakpk.aduan.update');
 Route::get('/bakpk/aduan/tindak_lanjut/{id}', 'App\Http\Controllers\BakpkController@detail_aduan')->name('bakpk.detail_aduan');
 Route::post('/bakpk/aduan/tindak_lanjut/update/{id}', 'App\Http\Controllers\BakpkController@tindak_lanjut_update')->name('bakpk.tindak_lanjut.update');
-Route::get('/bakpk/login', [BakpkController::class, 'login'])->name('bakpk.login')->middleware('guest');
+Route::get('/bakpk/login', [BakpkController::class, 'login'])->name('bakpk.login')->middleware('guest:guard1');
 Route::post('/bakpk/login', [BakpkController::class, 'authenticate']);
 Route::post('/bakpk/logout', [BakpkController::class, 'logout']);
 Route::get('/bakpk/register/bakpk', [BakpkController::class, 'bakpk_register'])->name('bakpk.register.bakpk');
@@ -45,7 +49,7 @@ Route::post('/bakpk/register/mahasiswa', [BakpkController::class, 'mahasiswa_sto
 Route::get('/bakpk/register/pimpinan', [BakpkController::class, 'pimpinan_register'])->name('bakpk.register.pimpinan');
 Route::post('/bakpk/register/pimpinan', [BakpkController::class, 'pimpinan_store'])->name('bakpk.store.pimpinan');
 
-Route::get('/pimpinan/login', [PimpinanKampusController::class, 'login'])->name('pimpinan.login')->middleware('guest');
+Route::get('/pimpinan/login', [PimpinanKampusController::class, 'login'])->name('pimpinan.login')->middleware('guest:guard3');
 Route::post('/pimpinan/login', [PimpinanKampusController::class, 'authenticate']);
 Route::post('/pimpinan/logout', [PimpinanKampusController::class, 'logout']);
 Route::get('/pimpinan', 'App\Http\Controllers\PimpinanKampusController@aduan_diterima');
