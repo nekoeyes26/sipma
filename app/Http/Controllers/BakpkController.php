@@ -16,6 +16,7 @@ class BakpkController extends Controller
     public function aduan_baru()
     {
         if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
             return redirect('/bakpk/login');
         }
 
@@ -31,6 +32,11 @@ class BakpkController extends Controller
 
     public function aduan_menunggu_solusi()
     {
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
         $data_aduan = Aduan::has('transaksi_aduan')
         ->whereHas('transaksi_aduan', function ($query) {
             $query->whereNotNull('tindak_lanjut')
@@ -51,6 +57,11 @@ class BakpkController extends Controller
 
     public function aduan_dengan_solusi()
     {
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
         $data_aduan = Aduan::has('transaksi_aduan')
         ->whereHas('transaksi_aduan', function ($query) {
             $query->whereNotNull('id_solusi');
@@ -66,6 +77,11 @@ class BakpkController extends Controller
 
     public function aduan_level_1()
     {
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
         $data_aduan = Aduan::where(function ($query) {
             $query->whereDoesntHave('transaksi_aduan')
                 ->orWhereHas('transaksi_aduan', function ($query) {
@@ -81,6 +97,11 @@ class BakpkController extends Controller
 
     public function aduan_level_2()
     {
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
         $data_aduan = Aduan::where(function ($query) {
             $query->whereDoesntHave('transaksi_aduan')
                 ->orWhereHas('transaksi_aduan', function ($query) {
@@ -96,6 +117,11 @@ class BakpkController extends Controller
 
     public function aduan_level_3()
     {
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
         $data_aduan = Aduan::where(function ($query) {
             $query->whereDoesntHave('transaksi_aduan')
                 ->orWhereHas('transaksi_aduan', function ($query) {
@@ -111,6 +137,10 @@ class BakpkController extends Controller
 
     public function aduan_update(Request $request, $id)
     {
+        if (!Auth::guard('guard1')->check()) {
+            return redirect('/bakpk/login');
+        }
+
         $data_aduan = Aduan::find($id);
         $data_aduan->level_aduan = $request->level_aduan;
         $data_aduan->update();
@@ -120,6 +150,11 @@ class BakpkController extends Controller
 
     public function detail_aduan($id)
     {
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
         $aduan = TransaksiAduan::where('id_aduan', $id)->first();
 
         if ($aduan === null) {
@@ -136,6 +171,10 @@ class BakpkController extends Controller
 
     public function tindak_lanjut_update(Request $request, $id)
     {
+        if (!Auth::guard('guard1')->check()) {
+            return redirect('/bakpk/login');
+        }
+
         $aduan = TransaksiAduan::where('id_aduan', $id)->first();
         $aduan->tindak_lanjut = $request->tindak_lanjut;
         $aduan->update();
@@ -158,7 +197,9 @@ class BakpkController extends Controller
         if (Auth::guard('guard1')->attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/bakpk/aduan');
+            $intendedUrl = session()->pull('url.intended', '/bakpk');
+
+            return redirect()->intended($intendedUrl);
         }
 
         session()->flash('gagal_login', 'Email tidak terdaftar');
@@ -180,11 +221,20 @@ class BakpkController extends Controller
 
     public function bakpk_register()
     {
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
         return view('bakpk.register.register_bakpk');
     }
 
     public function bakpk_store(Request $request)
     {
+        if (!Auth::guard('guard1')->check()) {
+            return redirect('/bakpk/login');
+        }
+
         if(Bakpk::where('email', '=', $request->email)->first()) {
             session()->flash('flash_message', 'Email sudah terdaftar');
             return redirect('/bakpk/register/bakpk');
@@ -203,11 +253,20 @@ class BakpkController extends Controller
 
     public function mahasiswa_register()
     {
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
         return view('bakpk.register.register_mahasiswa');
     }
 
     public function mahasiswa_store(Request $request)
     {
+        if (!Auth::guard('guard1')->check()) {
+            return redirect('/bakpk/login');
+        }
+
         if(Mahasiswa::where('nim', '=', $request->nim)->first()) {
             session()->flash('flash_message', 'NIM sudah terdaftar');
             return redirect('/bakpk/register/mahasiswa');
@@ -226,11 +285,20 @@ class BakpkController extends Controller
 
     public function pimpinan_register()
     {
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
         return view('bakpk.register.register_pimpinan');
     }
 
     public function pimpinan_store(Request $request)
     {
+        if (!Auth::guard('guard1')->check()) {
+            return redirect('/bakpk/login');
+        }
+
         if(PimpinanKampus::where('email', '=', $request->email)->first()) {
             session()->flash('flash_message', 'Email sudah terdaftar');
             return redirect('/bakpk/register/pimpinan_kampus');

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\PimpinanKampus;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class PimpinanKampusSeeder extends Seeder
 {
@@ -20,7 +21,7 @@ class PimpinanKampusSeeder extends Seeder
                 'nip_pimpinan' => $faker->randomNumber(9, true),
                 'email' => $faker->unique()->safeEmail,
                 'nama' => $faker->name,
-                'password' => "password",
+                'password' => Hash::make("password"),
                 'bagian' => "Akademik",
             ]);
         }

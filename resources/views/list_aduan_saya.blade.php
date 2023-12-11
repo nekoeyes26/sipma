@@ -82,11 +82,13 @@
                                         @else
                                             <td class="text-center"><i class="fa fa-times text-danger"></i></td>
                                         @endif
+                                        <input type="hidden" value="{{ $aduan->id_aduan }}">
                                     </tr>
                                     @php $i++; @endphp
                                 @endforeach
                             </tbody>
                         </table>
+                        <p>{{ $data_aduan->links() }}</p>
                     </div>
                 </div>
             </main>
@@ -154,8 +156,9 @@
                     // Check if the clicked element is one of the ignored elements
                     if (event.target.tagName !== "SELECT" && event.target.tagName !== "BUTTON" &&
                         event.target.tagName !== "A") {
-                        const id = this.querySelector("td:first-child").innerText;
-                        window.location.href = `{{ route('bakpk.detail_aduan', '') }}/${id}`;
+                        // Extract the id_aduan from the hidden input
+                        const id = this.querySelector("input[type=hidden]").value;
+                        window.location.href = `{{ route('detail_aduan', '') }}/${id}`;
                     }
                 });
 

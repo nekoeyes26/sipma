@@ -27,6 +27,7 @@ Route::post('/pengaduan/store', 'App\Http\Controllers\MahasiswaController@input_
 Route::get('/aduan_berhasil', 'App\Http\Controllers\MahasiswaController@aduan_berhasil_dibuat')->name('aduan_berhasil_dibuat');
 Route::get('/aduan_terbaru', 'App\Http\Controllers\MahasiswaController@aduan_terbaru')->name('aduan.recent');
 Route::get('/aduan_saya', 'App\Http\Controllers\MahasiswaController@aduan_saya')->name('aduan.saya');
+Route::get('/detail_aduan/{id}', 'App\Http\Controllers\MahasiswaController@detail_aduan')->name('detail_aduan');
 
 Route::get('/bakpk', 'App\Http\Controllers\BakpkController@aduan_baru');
 Route::get('/bakpk/aduan', 'App\Http\Controllers\BakpkController@aduan_baru');

@@ -162,4 +162,20 @@ class MahasiswaController extends Controller
 
         return view('list_aduan_saya', compact('data_aduan'));
     }
+
+    public function detail_aduan($id)
+    {
+        if (!Auth::guard('guard2')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/login');
+        }
+
+        $aduan = Aduan::where('id_aduan', $id)
+        ->with(['transaksi_aduan' => function ($query) {
+            $query->first();
+        }])
+        ->first();
+
+        return view('detail_aduan', compact('aduan'));
+    }
 }

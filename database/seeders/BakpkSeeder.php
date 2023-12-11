@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Bakpk;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class BakpkSeeder extends Seeder
 {
@@ -20,7 +21,7 @@ class BakpkSeeder extends Seeder
                 'nip_bakpk' => $faker->randomNumber(9, true),
                 'email' => $faker->unique()->safeEmail,
                 'nama' => $faker->name,
-                'password' => "password",
+                'password' => Hash::make("password"),
             ]);
         }
     }

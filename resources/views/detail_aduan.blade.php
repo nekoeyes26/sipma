@@ -43,9 +43,7 @@
                 <div class="col-12">
                     <label for="solusiAduan" class="form-label">Solusi Aduan:</label>
                     {{-- @if ($aduan->transaksi_aduan) --}}
-                    <textarea id="solusiAduan" class="form-control" rows="4" readonly>
-                        {{ optional($aduan->transaksi_aduan->first())->solusi->solusi ?? '' }}
-                    </textarea>
+                    <textarea id="solusiAduan" class="form-control" rows="4" readonly>{{ optional($aduan->transaksi_aduan->first())->solusi->solusi ?? '' }}</textarea>
                     {{-- @endif --}}
                 </div>
                 <div class="col-md-6">
