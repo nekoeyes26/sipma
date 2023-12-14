@@ -655,3 +655,61 @@
 }
 
 /*** Footer End ***/
+
+/*** Profil ***/
+.card-profil{
+  height: 500px;
+  width: 1000px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.356);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position:relative;
+  margin-top: 6%;
+}
+.card-profil h1{
+  font-family:"Poppins";
+  font-size: 45px;
+  font-weight:bold;
+  color: #3A3C3B;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: -30px;
+
+}
+.card-profil table{
+  height: 50vh;
+}
+
+.card-profil img{
+  width: 250px;
+  height: 250px;
+  border-radius: 360px;
+  margin-left: 29%;
+}
+
+.Bio{
+  margin-left: 5vh;
+}
+.Bio p{
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 2px;
+  margin-top: 15px;
+}
+.Bio .profil-ket{
+  border-radius: 5px;
+  border-width: 0.5px;
+  border-color: #9d9d9da4;
+  width: 450px;
+  height: 32px;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 17px;
+  color: #2c2c2ca5;
+  background-color: #ffffff;
+}
+
+/*** Profil End***/
