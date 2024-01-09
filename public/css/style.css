@@ -103,10 +103,19 @@
 /*** Topbar End ***/
 
 /*** Navbar Start ***/
-.navbar .navbar-nav {
-  padding: 15px 0;
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  margin-left: -102px;
 }
-
+.navbar-brand{
+  padding-left: 100px;
+}
+#navbarCollapse{
+  padding-left: 20px;
+}
 .navbar .navbar-nav .nav-link {
   padding: 10px;
   color: var(--bs-white);
@@ -148,6 +157,11 @@
 }
 
 /*** Navbar End ***/
+
+/* Adjust top padding for the content to avoid overlapping with fixed navbar */
+body {
+  padding-top: 67px; /* Sesuaikan dengan tinggi navbar Anda */
+}
 
 /*** Carousel Start ***/
 

@@ -84,22 +84,22 @@
                 <div class="position-sticky">
                     <ul class="nav flex-column sidebar-menu">
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="#"> Aduan Baru </a>
+                            <a class="nav-link active text-center" href="{{ route('bakpk.aduan.baru') }}"> Aduan Baru </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-center" href="#"> Aduan Level 1 </a>
+                            <a class="nav-link text-center" href="{{ route('bakpk.aduan.level1') }}"> Aduan Level 1 </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="#"> Aduan Level 2 </a>
+                            <a class="nav-link text-center" href="{{ route('bakpk.aduan.level2') }}"> Aduan Level 2 </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="#"> Aduan Level 3 </a>
+                            <a class="nav-link text-center" href="{{ route('bakpk.aduan.level3') }}"> Aduan Level 3 </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="#"> Aduan Menunggu Solusi </a>
+                            <a class="nav-link text-center" href="{{ route('bakpk.aduan.menunggu_solusi') }}"> Aduan Menunggu Solusi </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="#"> Aduan Dengan Solusi </a>
+                            <a class="nav-link text-center" href="{{ route('bakpk.aduan.dengan_solusi') }}"> Aduan Dengan Solusi </a>
                         </li>
                     </ul>
                 </div>
