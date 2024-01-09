@@ -314,4 +314,24 @@ class BakpkController extends Controller
         session()->flash('flash_message', 'Pendaftaran akun berhasil, silahkan login');
         return redirect('/bakpk/');
     }
+
+    public function tatacara()
+    {
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
+        return view('bakpk.tatacara');
+    }
+
+    public function about()
+    {
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
+        return view('bakpk.about');
+    }
 }

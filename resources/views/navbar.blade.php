@@ -5,9 +5,9 @@
 </div>
 <!-- Spinner End -->
 <!-- Navbar Start -->
-<div class="container-fluid bg-primary">
+{{-- <div class="container-fluid bg-primary"> --}}
     <div class="container">
-        <nav class="navbar navbar-dark navbar-expand-lg py-0">
+        <nav class="navbar navbar-dark navbar-expand-lg py-0 bg-primary">
             <a href="#" class="navbar-brand">
                 <h1 class="text-white fw-bold d-block">SIP<span class="text-secondary">MA</span> </h1>
             </a>
@@ -40,5 +40,5 @@
             </div>
         </nav>
     </div>
-</div>
+{{-- </div> --}}
 <!-- Navbar End -->

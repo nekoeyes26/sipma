@@ -50,6 +50,8 @@ Route::get('/bakpk/register/mahasiswa', [BakpkController::class, 'mahasiswa_regi
 Route::post('/bakpk/register/mahasiswa', [BakpkController::class, 'mahasiswa_store'])->name('bakpk.store.mahasiswa');
 Route::get('/bakpk/register/pimpinan', [BakpkController::class, 'pimpinan_register'])->name('bakpk.register.pimpinan');
 Route::post('/bakpk/register/pimpinan', [BakpkController::class, 'pimpinan_store'])->name('bakpk.store.pimpinan');
+Route::get('/bakpk/tatacara', 'App\Http\Controllers\BakpkController@tatacara')->name('bakpk.tatacara');
+Route::get('/bakpk/about', 'App\Http\Controllers\BakpkController@about')->name('bakpk.about');
 
 Route::get('/pimpinan/login', [PimpinanKampusController::class, 'login'])->name('pimpinan.login')->middleware('guest:guard3');
 Route::post('/pimpinan/login', [PimpinanKampusController::class, 'authenticate']);
