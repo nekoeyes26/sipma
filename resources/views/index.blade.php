@@ -26,15 +26,14 @@
                             <h6 class="text-secondary h4 animated fadeInUp">SIPMA</h6>
                             <h1 class="text-white display-1 mb-4 animated fadeInRight">Sistem Informasi Pengaduan
                                 Mahasiswa</h1>
-                            <p class="mb-4 text-white fs-5 animated fadeInDown">Lorem ipsum dolor sit amet elit. Sed
-                                efficitur quis purus ut interdum. Pellentesque aliquam dolor eget urna ultricies
-                                tincidunt.</p>
+                            <p class="mb-4 text-white fs-5 animated fadeInDown">Sistem Informasi Pengaduan Mahasiswa hadir untuk 
+                                mendukung transparansi dan efisiensi. Sampaikan keluhan atau masukan Anda dengan mudah dan cepat.</p>
                             <a href="" class="me-2"><button type="button"
-                                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Read
-                                    More</button></a>
+                                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Baca
+                                    Selengkapnya</button></a>
                             <a href="" class="ms-2"><button type="button"
-                                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Contact
-                                    Us</button></a>
+                                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Kontak
+                                    Kami</button></a>
                         </div>
                     </div>
                 </div>
@@ -45,26 +44,25 @@
                             <h6 class="text-secondary h4 animated fadeInUp">SIPMA</h6>
                             <h1 class="text-white display-1 mb-4 animated fadeInLeft">Silahkan laporkan keluhan Anda
                             </h1>
-                            <p class="mb-4 text-white fs-5 animated fadeInDown">Lorem ipsum dolor sit amet elit. Sed
-                                efficitur quis purus ut interdum. Pellentesque aliquam dolor eget urna ultricies
-                                tincidunt.</p>
+                            <p class="mb-4 text-white fs-5 animated fadeInDown">Kami menyambut Anda di Sistem Informasi Pengaduan Mahasiswa, 
+                                platform yang dirancang untuk mendengar dan menyelesaikan setiap permasalahan yang dihadapi mahasiswa</p>
                             <a href="" class="me-2"><button type="button"
-                                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Read
-                                    More</button></a>
+                                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Baca
+                                    Selengkapnya</button></a>
                             <a href="" class="ms-2"><button type="button"
-                                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Contact
-                                    Us</button></a>
+                                    class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Kontak
+                                    Kami</button></a>
                         </div>
                     </div>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">Sebelumnya</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden">Selanjutnya</span>
             </button>
         </div>
     </div>
@@ -83,13 +81,13 @@
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
-                    <h5 class="text-primary">About Us</h5>
+                    <h5 class="text-primary">Tentang Kami</h5>
                     <h1 class="mb-4">About Sistem Informasi Pengaduan Mahasiswa</h1>
                     <p>Sebuah sistem yang dirancang untuk membantu mahasiswa dalam mengajukan keluhan atau pengaduan
                         terkait berbagai hal di lingkungan kampus.</p>
                     <p class="mb-4">Membantu mahasiswa dalam mengajukan pengaduan terkait layanan akademik, keuangan,
                         sarana dan prasarana, serta berbagai permasalahan lainnya di lingkungan kampus</p>
-                    <a href="" class="btn btn-secondary rounded-pill px-5 py-3 text-white">More Details</a>
+                    <a href="" class="btn btn-secondary rounded-pill px-5 py-3 text-white">Detail Selengkapnya</a>
                 </div>
             </div>
         </div>
@@ -109,9 +107,9 @@
                             <div class="services-content-icon">
                                 <i class="fa fa-code fa-7x mb-4 text-primary"></i>
                                 <h4 class="mb-3">Tulis Aduan</h4>
-                                <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut
-                                    interdum.
-                                    Aliquam dolor eget urna ultricies tincidunt.</p>
+                                <p class="mb-4">Tulis aduan anda dengan login akun yang telah anda punya, kemudian
+                                    tulis aduan anda pada form yang tersedia.
+                                </p>
                                 <!-- <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a> -->
                             </div>
                         </div>
@@ -123,9 +121,9 @@
                             <div class="services-content-icon">
                                 <i class="fa fa-file-code fa-7x mb-4 text-primary"></i>
                                 <h4 class="mb-3">Proses Tindak Lanjut</h4>
-                                <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut
-                                    interdum.
-                                    Aliquam dolor eget urna ultricies tincidunt.</p>
+                                <p class="mb-4">Setelah Aduan anda terkirim kami akan melakukan 
+                                    proses tindak lanjut secara bertahap.
+                                </p>
                                 <!-- <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a> -->
                             </div>
                         </div>
@@ -137,9 +135,7 @@
                             <div class="services-content-icon">
                                 <i class="fa fa-external-link-alt fa-7x mb-4 text-primary"></i>
                                 <h4 class="mb-3">Pemberian Solusi</h4>
-                                <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut
-                                    interdum.
-                                    Aliquam dolor eget urna ultricies tincidunt.</p>
+                                <p class="mb-4">Kami akan memberikan hasil solusi dari aduan yang anda ajukan.</p>
                                 <!-- <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a> -->
                             </div>
                         </div>
@@ -151,9 +147,7 @@
                             <div class="services-content-icon">
                                 <i class="fas fa-user-secret fa-7x mb-4 text-primary"></i>
                                 <h4 class="mb-3">Selesai</h4>
-                                <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut
-                                    interdum.
-                                    Aliquam dolor eget urna ultricies tincidunt.</p>
+                                <p class="mb-4">Aduan anda merupakan upaya perkembangan bagi kita semua.</p>
                                 <!-- <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a> -->
                             </div>
                         </div>
@@ -167,8 +161,8 @@
     <div class="container-fluid py-5 mb-5 team">
         <div class="container">
             <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                <h5 class="text-primary">Our Team</h5>
-                <h1>Meet our expert Team</h1>
+                <h5 class="text-primary">Tim Kami</h5>
+                <h1>Perkenalkan Tim Ahli Kami</h1>
             </div>
             <div class="owl-carousel team-carousel wow fadeIn" data-wow-delay=".5s">
                 <div class="rounded team-item">
@@ -178,8 +172,8 @@
                                 <img src="img/team-1.jpg" class="img-fluid w-100 rounded-circle" alt="">
                             </div>
                             <div class="team-name text-center py-3">
-                                <h4 class="">Full Name</h4>
-                                <p class="m-0">Designation</p>
+                                <h4 class="">Nama</h4>
+                                <p class="m-0">Bagian</p>
                             </div>
                             <div class="team-icon d-flex justify-content-center pb-4">
                                 <a class="btn btn-square btn-secondary text-white rounded-circle m-1"
@@ -201,8 +195,8 @@
                                 <img src="img/team-2.jpg" class="img-fluid w-100 rounded-circle" alt="">
                             </div>
                             <div class="team-name text-center py-3">
-                                <h4 class="">Full Name</h4>
-                                <p class="m-0">Designation</p>
+                                <h4 class="">Nama</h4>
+                                <p class="m-0">Bagian</p>
                             </div>
                             <div class="team-icon d-flex justify-content-center pb-4">
                                 <a class="btn btn-square btn-secondary text-white rounded-circle m-1"
@@ -224,8 +218,8 @@
                                 <img src="img/team-3.jpg" class="img-fluid w-100 rounded-circle" alt="">
                             </div>
                             <div class="team-name text-center py-3">
-                                <h4 class="">Full Name</h4>
-                                <p class="m-0">Designation</p>
+                                <h4 class="">Nama</h4>
+                                <p class="m-0">Bagian</p>
                             </div>
                             <div class="team-icon d-flex justify-content-center pb-4">
                                 <a class="btn btn-square btn-secondary text-white rounded-circle m-1"
@@ -247,8 +241,8 @@
                                 <img src="img/team-4.jpg" class="img-fluid w-100 rounded-circle" alt="">
                             </div>
                             <div class="team-name text-center py-3">
-                                <h4 class="">Full Name</h4>
-                                <p class="m-0">Designation</p>
+                                <h4 class="">Nama</h4>
+                                <p class="m-0">Bagian</p>
                             </div>
                             <div class="team-icon d-flex justify-content-center pb-4">
                                 <a class="btn btn-square btn-secondary text-white rounded-circle m-1"

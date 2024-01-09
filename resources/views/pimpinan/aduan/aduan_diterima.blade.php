@@ -71,7 +71,7 @@
     </style>
 </head>
 
-<body>
+<body style="margin-left: -19px">
     @include('pimpinan.navbar')
     <!-- Show/Hide Button -->
     <button id="sidebarToggle" class="btn btn-secondary d-md-none">

@@ -8,7 +8,7 @@
     @include('stylesheet')
 </head>
 
-<body>
+<body style="margin-left: -19px">
     @php
         $excludeSpinner = true; // Set this variable to true to exclude the spinner
     @endphp

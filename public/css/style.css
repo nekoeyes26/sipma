@@ -106,21 +106,24 @@
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 110%;
   z-index: 1000;
   margin-left: -102px;
+  display: flex;
 }
 .navbar-brand{
   padding-left: 100px;
 }
 #navbarCollapse{
-  padding-left: 20px;
+  padding-left: 35vh;
+  
 }
 .navbar .navbar-nav .nav-link {
-  padding: 10px;
+  padding: 20px;
   color: var(--bs-white);
   font-size: 18px;
   outline: none;
+  font-weight: 300;
 }
 
 .navbar .navbar-nav .nav-link:hover,
@@ -158,9 +161,10 @@
 
 /*** Navbar End ***/
 
-/* Adjust top padding for the content to avoid overlapping with fixed navbar */
+/* fixed navbar */
 body {
-  padding-top: 67px; /* Sesuaikan dengan tinggi navbar Anda */
+  padding-top: 66px; 
+  font-family: 'Poppins', sans-serif;
 }
 
 /*** Carousel Start ***/
@@ -727,3 +731,11 @@ body {
 }
 
 /*** Profil End***/
+
+/*** Sidebar ***/
+ /* Active Link Styles */
+ #sidebar .nav-link.active {
+  color: #14389b;
+  font-weight: bold;
+  font-size: 17px;
+}

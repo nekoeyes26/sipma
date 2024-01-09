@@ -11,7 +11,7 @@
 <body>
     @include('bakpk.navbar')
     <!-- About Start -->
-    <div class="container-fluid py-5 my-5">
+    <div class="container-fluid py-4 my-3">
         <div class="container pt-5">
             <div class="row g-5">
                 <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">

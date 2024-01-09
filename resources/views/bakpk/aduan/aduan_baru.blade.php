@@ -37,11 +37,6 @@
             text-decoration: none;
         }
 
-        /* Active Link Styles */
-        #sidebar .nav-link.active {
-            color: #14389b;
-        }
-
         @media (max-width: 768px) {
             #sidebar {
                 display: none !important;
