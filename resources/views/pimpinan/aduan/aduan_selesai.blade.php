@@ -84,7 +84,7 @@
                 <div class="position-sticky">
                     <ul class="nav flex-column sidebar-menu">
                         <li class="nav-item">
-                            <a class="nav-link active text-center" href="#"> Aduan Diterima </a>
+                            <a class="nav-link text-center" href="#"> Aduan Diterima </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-center" href="#"> Aduan Level 1 </a>
@@ -96,7 +96,7 @@
                             <a class="nav-link text-center" href="#"> Aduan Level 3 </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="#"> Aduan Selesai </a>
+                            <a class="nav-link active text-center" href="#"> Aduan Selesai </a>
                         </li>
                     </ul>
                 </div>

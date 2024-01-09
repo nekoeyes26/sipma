@@ -56,3 +56,9 @@ Route::post('/pimpinan/login', [PimpinanKampusController::class, 'authenticate']
 Route::post('/pimpinan/logout', [PimpinanKampusController::class, 'logout']);
 Route::get('/pimpinan', 'App\Http\Controllers\PimpinanKampusController@aduan_diterima');
 Route::get('/pimpinan/aduan', 'App\Http\Controllers\PimpinanKampusController@aduan_diterima');
+Route::get('/pimpinan/aduan/level1', 'App\Http\Controllers\PimpinanKampusController@aduan_level_1')->name('pimpinan.aduan.level1');
+Route::get('/pimpinan/aduan/level2', 'App\Http\Controllers\PimpinanKampusController@aduan_level_2')->name('pimpinan.aduan.level2');
+Route::get('/pimpinan/aduan/level3', 'App\Http\Controllers\PimpinanKampusController@aduan_level_3')->name('pimpinan.aduan.level3');
+Route::get('/pimpinan/aduan/selesai', 'App\Http\Controllers\PimpinanKampusController@aduan_selesai')->name('pimpinan.aduan.selesai');
+Route::get('/pimpinan/aduan/detail/{id}', 'App\Http\Controllers\PimpinanKampusController@detail_aduan')->name('pimpinan.detail_aduan');
+Route::post('/pimpinan/aduan/solusi/post/{id}', 'App\Http\Controllers\PimpinanKampusController@kirim_solusi')->name('pimpinan.kirim_solusi');
