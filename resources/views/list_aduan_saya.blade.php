@@ -6,6 +6,15 @@
     <title>SIPMA</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     @include('stylesheet')
+    <style>
+        /* CSS for hover effect */
+        table tbody tr:hover {
+            background-color: #f0f0f0;
+            /* Ganti warna latar belakang saat hover di sini */
+            transition: background-color 0.3s;
+            /* Animasi perubahan warna latar belakang */
+        }
+    </style>
 </head>
 
 <body>
@@ -62,6 +71,7 @@
                                     <th onclick="sortTable(2)">Detail Aduan</th>
                                     <th onclick="sortTable(3)">Jenis Aduan</th>
                                     <th onclick="sortTable(4)">Tanggal Kirim</th>
+                                    <th onclick="sortTable(5)">Status</th>
                                 </tr>
                             </thead>
                             <tbody>

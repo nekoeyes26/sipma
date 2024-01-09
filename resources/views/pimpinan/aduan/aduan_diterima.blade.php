@@ -72,7 +72,7 @@
 </head>
 
 <body>
-    @include('bakpk.navbar')
+    @include('pimpinan.navbar')
     <!-- Show/Hide Button -->
     <button id="sidebarToggle" class="btn btn-secondary d-md-none">
         <i class="bi bi-list"></i>
@@ -229,7 +229,7 @@
                     if (event.target.tagName !== "SELECT" && event.target.tagName !== "BUTTON" &&
                         event.target.tagName !== "A") {
                         const id = this.querySelector("td:first-child").innerText;
-                        window.location.href = `{{ route('bakpk.detail_aduan', '') }}/${id}`;
+                        window.location.href = `{{ route('pimpinan.detail_aduan', '') }}/${id}`;
                     }
                 });
 

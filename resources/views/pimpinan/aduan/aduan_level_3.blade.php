@@ -72,7 +72,7 @@
 </head>
 
 <body>
-    @include('bakpk.navbar')
+    @include('pimpinan.navbar')
     <!-- Show/Hide Button -->
     <button id="sidebarToggle" class="btn btn-secondary d-md-none">
         <i class="bi bi-list"></i>
@@ -84,10 +84,19 @@
                 <div class="position-sticky">
                     <ul class="nav flex-column sidebar-menu">
                         <li class="nav-item">
-                            <a class="nav-link active text-center" href="#"> Daftar Mahasiswa </a>
+                            <a class="nav-link text-center" href="#"> Aduan Diterima </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="#"> Daftar Pimpinan </a>
+                            <a class="nav-link text-center" href="#"> Aduan Level 1 </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="#"> Aduan Level 2 </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-center" href="#"> Aduan Level 3 </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="#"> Aduan Selesai </a>
                         </li>
                     </ul>
                 </div>
@@ -97,7 +106,31 @@
                 <div class="table-container">
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Daftar Akun Mahasiswa</h1>
+                        <h1 class="h2">List Aduan Diterima</h1>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false"> Filter Jenis Aduan </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <label class="dropdown-item">
+                                        <input type="radio" name="jenisAduan" value="Semua"> Semua </label>
+                                </li>
+                                <li>
+                                    <label class="dropdown-item">
+                                        <input type="radio" name="jenisAduan" value="Akademik"> Akademik </label>
+                                </li>
+                                <li>
+                                    <label class="dropdown-item">
+                                        <input type="radio" name="jenisAduan" value="Keuangan"> Keuangan </label>
+                                </li>
+                                <li>
+                                    <label class="dropdown-item">
+                                        <input type="radio" name="jenisAduan" value="Sarana Prasarana"> Sarana
+                                        Prasarana
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="input-group">
                         <input type="text" class="form-control" id="searchBox" placeholder="Cari data...">
@@ -108,43 +141,85 @@
                         <table class="table table-striped" id="sortable-table">
                             <thead>
                                 <tr>
-                                    <th onclick="sortTable(0)">No</th>
-                                    <th onclick="sortTable(1)">NIM</th>
-                                    <th onclick="sortTable(2)">Nama</th>
-                                    <th onclick="sortTable(3)">Jurusan</th>
-                                    <th onclick="sortTable(4)">Prodi</th>
+                                    <th onclick="sortTable(0)">ID Aduan</th>
+                                    <th onclick="sortTable(1)">Judul Aduan</th>
+                                    <th onclick="sortTable(2)">Nama Pengirim</th>
+                                    <th onclick="sortTable(3)">Jenis Aduan</th>
+                                    <th onclick="sortTable(4)">Level Urgensi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>4.33.21.1.01</td>
-                                    <td>Ahmad Jamaludin</td>
-                                    <td>Elektro</td>
-                                    <td>Listrik</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>4.33.21.1.02</td>
-                                    <td>Bagas Setiawan</td>
-                                    <td>Elektro</td>
-                                    <td>Elektronika</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>4.33.21.1.03</td>
-                                    <td>Chero Charizard</td>
-                                    <td>Mesin</td>
-                                    <td>Mesin</td>
-                                </tr>
+                                @foreach ($data_aduan as $aduan)
+                                    <tr>
+                                        <td>{{ $aduan->id_aduan }}</td>
+                                        <td>{{ $aduan->judul_aduan }}</td>
+                                        <td>{{ $aduan->mahasiswa->nama }}</td>
+                                        <td>{{ $aduan->jenis_aduan }}</td>
+                                        <td>{{ $aduan->level_aduan }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
+                        <p>{{ $data_aduan->links() }}</p>
                     </div>
                 </div>
             </main>
         </div>
     </div>
     @include('script')
+    <script>
+        // Function to filter the table based on the selected option
+        function filterTable(selectedOption) {
+            var table = document.querySelector('.table');
+            var rows = table.querySelectorAll('tbody tr');
+            rows.forEach(function(row) {
+                var jenisAduanCell = row.querySelectorAll('td')[3];
+                var jenisAduan = jenisAduanCell.innerText.trim();
+                if (selectedOption === 'Semua' || selectedOption === jenisAduan) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+        // Function to perform search
+        function searchTable(searchText) {
+            var table = document.querySelector('.table');
+            var rows = table.querySelectorAll('tbody tr');
+            searchText = searchText.toLowerCase();
+            rows.forEach(function(row) {
+                var cells = row.querySelectorAll('td');
+                var found = false;
+                for (var i = 0; i < cells.length; i++) {
+                    var cellText = cells[i].innerText.toLowerCase();
+                    if (cellText.includes(searchText)) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+        // Add an event listener to the radio buttons
+        document.querySelectorAll('input[name="jenisAduan"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                var selectedOption = radio.value;
+                filterTable(selectedOption);
+            });
+        });
+        // Add an event listener to the search box for real-time filtering
+        var searchBox = document.getElementById('searchBox');
+        searchBox.addEventListener('input', function() {
+            var searchText = searchBox.value;
+            searchTable(searchText);
+        });
+        // Initial table filtering
+        filterTable('Semua');
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const tableRows = document.querySelectorAll("table tbody tr");
