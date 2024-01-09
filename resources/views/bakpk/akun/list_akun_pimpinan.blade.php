@@ -84,10 +84,10 @@
                 <div class="position-sticky">
                     <ul class="nav flex-column sidebar-menu">
                         <li class="nav-item">
-                            <a class="nav-link active text-center" href="#"> Daftar Mahasiswa </a>
+                            <a class="nav-link text-center" href="#"> Daftar Mahasiswa </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="#"> Daftar Pimpinan </a>
+                            <a class="nav-link active text-center" href="#"> Daftar Pimpinan </a>
                         </li>
                     </ul>
                 </div>
@@ -97,7 +97,7 @@
                 <div class="table-container">
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Daftar Akun Mahasiswa</h1>
+                        <h1 class="h2">Daftar Akun Pimpinan</h1>
                     </div>
                     <div class="input-group">
                         <input type="text" class="form-control" id="searchBox" placeholder="Cari data...">
@@ -109,33 +109,29 @@
                             <thead>
                                 <tr>
                                     <th onclick="sortTable(0)">No</th>
-                                    <th onclick="sortTable(1)">NIM</th>
+                                    <th onclick="sortTable(1)">NIP</th>
                                     <th onclick="sortTable(2)">Nama</th>
-                                    <th onclick="sortTable(3)">Jurusan</th>
-                                    <th onclick="sortTable(4)">Prodi</th>
+                                    <th onclick="sortTable(3)">Email</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>4.33.21.1.01</td>
+                                    <td>43321101</td>
                                     <td>Ahmad Jamaludin</td>
-                                    <td>Elektro</td>
-                                    <td>Listrik</td>
+                                    <td>ahmad@gmail.com</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>4.33.21.1.02</td>
+                                    <td>43321102</td>
                                     <td>Bagas Setiawan</td>
-                                    <td>Elektro</td>
-                                    <td>Elektronika</td>
+                                    <td>bagas@gmail.com</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>4.33.21.1.03</td>
+                                    <td>43321103</td>
                                     <td>Chero Charizard</td>
-                                    <td>Mesin</td>
-                                    <td>Mesin</td>
+                                    <td>chero@gmail.com</td>
                                 </tr>
                             </tbody>
                         </table>

@@ -77,7 +77,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="solusiAduan" class="form-label">Solusi Aduan:</label>
-                            <textarea class="form-control" rows="5" name="solusi">{{ $aduan->solusi->solusi ?? '' }}</textarea>
+                            <textarea class="form-control" rows="5" name="solusi" {{ $aduan->solusi->solusi ? 'readonly' : '' }}>{{ $aduan->solusi->solusi ?? '' }}</textarea>
                         </div>
                 </div>
             </div>
