@@ -113,30 +113,28 @@
                                     <th onclick="sortTable(2)">Nama</th>
                                     <th onclick="sortTable(3)">Jurusan</th>
                                     <th onclick="sortTable(4)">Prodi</th>
+                                    <th onclick="sortTable(5)">Status Mahasiswa</th>
+                                    <th>Ubah Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>4.33.21.1.01</td>
-                                    <td>Ahmad Jamaludin</td>
-                                    <td>Elektro</td>
-                                    <td>Listrik</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>4.33.21.1.02</td>
-                                    <td>Bagas Setiawan</td>
-                                    <td>Elektro</td>
-                                    <td>Elektronika</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>4.33.21.1.03</td>
-                                    <td>Chero Charizard</td>
-                                    <td>Mesin</td>
-                                    <td>Mesin</td>
-                                </tr>
+                                @php
+                                    $i = 1;
+                                @endphp
+                                @foreach ($data_mahasiswa as $mahasiswa)
+                                    <tr>
+                                        <td>{{ $i++ }}</td>
+                                        <td>{{ $mahasiswa->nim }}</td>
+                                        <td>{{ $mahasiswa->nama }}</td>
+                                        <td>{{ $mahasiswa->jurusan }}</td>
+                                        <td>{{ $mahasiswa->prodi }}</td>
+                                        <td class="status-cell">{{ $mahasiswa->status_mahasiswa }}</td>
+                                        <td><button class="btn btn-sm btn-primary toggle-status"
+                                                data-id="{{ $mahasiswa->id_mahasiswa }}">
+                                                Ubah Status
+                                            </button></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -146,26 +144,57 @@
     </div>
     @include('script')
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const tableRows = document.querySelectorAll("table tbody tr");
-            tableRows.forEach(row => {
-                row.addEventListener("click", function(event) {
-                    // Check if the clicked element is one of the ignored elements
-                    if (event.target.tagName !== "SELECT" && event.target.tagName !== "BUTTON" &&
-                        event.target.tagName !== "A") {
-                        const id = this.querySelector("td:first-child").innerText;
-                        window.location.href = `{{ route('pimpinan.detail_aduan', '') }}/${id}`;
+        // Function to filter the table based on the selected option
+        function filterTable(selectedOption) {
+            var table = document.querySelector('.table');
+            var rows = table.querySelectorAll('tbody tr');
+            rows.forEach(function(row) {
+                var jenisAduanCell = row.querySelectorAll('td')[3];
+                var jenisAduan = jenisAduanCell.innerText.trim();
+                if (selectedOption === 'Semua' || selectedOption === jenisAduan) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+        // Function to perform search
+        function searchTable(searchText) {
+            var table = document.querySelector('.table');
+            var rows = table.querySelectorAll('tbody tr');
+            searchText = searchText.toLowerCase();
+            rows.forEach(function(row) {
+                var cells = row.querySelectorAll('td');
+                var found = false;
+                for (var i = 0; i < cells.length; i++) {
+                    var cellText = cells[i].innerText.toLowerCase();
+                    if (cellText.includes(searchText)) {
+                        found = true;
+                        break;
                     }
-                });
-
-                row.addEventListener("mouseover", function() {
-                    this.style.cursor = "pointer";
-                });
-                row.addEventListener("mouseout", function() {
-                    this.style.cursor = "default";
-                });
+                }
+                if (found) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+        // Add an event listener to the radio buttons
+        document.querySelectorAll('input[name="jenisAduan"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                var selectedOption = radio.value;
+                filterTable(selectedOption);
             });
         });
+        // Add an event listener to the search box for real-time filtering
+        var searchBox = document.getElementById('searchBox');
+        searchBox.addEventListener('input', function() {
+            var searchText = searchBox.value;
+            searchTable(searchText);
+        });
+        // Initial table filtering
+        filterTable('Semua');
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -249,6 +278,35 @@
                 }
             }
         }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggleButtons = document.querySelectorAll(".toggle-status");
+
+            toggleButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    const mahasiswaId = this.getAttribute("data-id");
+                    const statusCell = this.closest("tr").querySelector(".status-cell");
+
+                    // Make an AJAX request to update the status
+                    fetch(`/bakpk/mhs_status/${mahasiswaId}`, {
+                            method: 'POST',
+                            headers: {
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                'Content-Type': 'application/json'
+                            },
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data.message);
+
+                            // Update the UI to reflect the new status
+                            statusCell.textContent = data.newStatus;
+                        })
+                        .catch(error => console.error('Error:', error));
+                });
+            });
+        });
     </script>
 </body>
 

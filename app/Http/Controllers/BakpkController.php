@@ -334,4 +334,40 @@ class BakpkController extends Controller
 
         return view('bakpk.about');
     }
+
+     
+    public function list_akun_mhs(){
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
+        $data_mahasiswa = Mahasiswa::all();
+
+        return view('bakpk.akun.list_akun_mahasiswa', compact('data_mahasiswa'));
+    }
+
+    public function update_status_mhs($id){
+        if (!Auth::guard('guard1')->check()) {
+            return redirect('/bakpk/login');
+        }
+
+        $mahasiswa = Mahasiswa::findOrFail($id);
+
+        $mahasiswa->status_mahasiswa = ($mahasiswa->status_mahasiswa == 'Aktif') ? 'Non Aktif' : 'Aktif';
+        $mahasiswa->save();
+
+        return response()->json(['message' => 'Status updated successfully', 'newStatus' => $mahasiswa->status_mahasiswa]);
+    }
+
+    public function list_akun_pimpinan(){
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+
+        $data_pimpinan = PimpinanKampus::all();
+
+        return view('bakpk.akun.list_akun_pimpinan', compact('data_pimpinan'));
+    }
 }
