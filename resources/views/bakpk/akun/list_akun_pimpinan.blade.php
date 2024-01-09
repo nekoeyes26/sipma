@@ -84,10 +84,11 @@
                 <div class="position-sticky">
                     <ul class="nav flex-column sidebar-menu">
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="#"> Daftar Mahasiswa </a>
+                            <a class="nav-link text-center" href="{{ route('bakpk.akun.mhs') }}"> Daftar Mahasiswa </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-center" href="#"> Daftar Pimpinan </a>
+                            <a class="nav-link active text-center" href="{{ route('bakpk.akun.pimpinan') }}"> Daftar
+                                Pimpinan </a>
                         </li>
                     </ul>
                 </div>
@@ -112,27 +113,22 @@
                                     <th onclick="sortTable(1)">NIP</th>
                                     <th onclick="sortTable(2)">Nama</th>
                                     <th onclick="sortTable(3)">Email</th>
+                                    <th onclick="sortTable(4)">Bagian</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>43321101</td>
-                                    <td>Ahmad Jamaludin</td>
-                                    <td>ahmad@gmail.com</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>43321102</td>
-                                    <td>Bagas Setiawan</td>
-                                    <td>bagas@gmail.com</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>43321103</td>
-                                    <td>Chero Charizard</td>
-                                    <td>chero@gmail.com</td>
-                                </tr>
+                                @php
+                                    $i = 1;
+                                @endphp
+                                @foreach ($data_pimpinan as $pimpinan)
+                                    <tr>
+                                        <td>{{ $i++ }}</td>
+                                        <td>{{ $pimpinan->nip_pimpinan }}</td>
+                                        <td>{{ $pimpinan->nama }}</td>
+                                        <td>{{ $pimpinan->email }}</td>
+                                        <td>{{ $pimpinan->bagian }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -142,26 +138,57 @@
     </div>
     @include('script')
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const tableRows = document.querySelectorAll("table tbody tr");
-            tableRows.forEach(row => {
-                row.addEventListener("click", function(event) {
-                    // Check if the clicked element is one of the ignored elements
-                    if (event.target.tagName !== "SELECT" && event.target.tagName !== "BUTTON" &&
-                        event.target.tagName !== "A") {
-                        const id = this.querySelector("td:first-child").innerText;
-                        window.location.href = `{{ route('pimpinan.detail_aduan', '') }}/${id}`;
+        // Function to filter the table based on the selected option
+        function filterTable(selectedOption) {
+            var table = document.querySelector('.table');
+            var rows = table.querySelectorAll('tbody tr');
+            rows.forEach(function(row) {
+                var jenisAduanCell = row.querySelectorAll('td')[3];
+                var jenisAduan = jenisAduanCell.innerText.trim();
+                if (selectedOption === 'Semua' || selectedOption === jenisAduan) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+        // Function to perform search
+        function searchTable(searchText) {
+            var table = document.querySelector('.table');
+            var rows = table.querySelectorAll('tbody tr');
+            searchText = searchText.toLowerCase();
+            rows.forEach(function(row) {
+                var cells = row.querySelectorAll('td');
+                var found = false;
+                for (var i = 0; i < cells.length; i++) {
+                    var cellText = cells[i].innerText.toLowerCase();
+                    if (cellText.includes(searchText)) {
+                        found = true;
+                        break;
                     }
-                });
-
-                row.addEventListener("mouseover", function() {
-                    this.style.cursor = "pointer";
-                });
-                row.addEventListener("mouseout", function() {
-                    this.style.cursor = "default";
-                });
+                }
+                if (found) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+        // Add an event listener to the radio buttons
+        document.querySelectorAll('input[name="jenisAduan"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                var selectedOption = radio.value;
+                filterTable(selectedOption);
             });
         });
+        // Add an event listener to the search box for real-time filtering
+        var searchBox = document.getElementById('searchBox');
+        searchBox.addEventListener('input', function() {
+            var searchText = searchBox.value;
+            searchTable(searchText);
+        });
+        // Initial table filtering
+        filterTable('Semua');
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {

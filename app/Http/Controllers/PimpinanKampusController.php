@@ -200,4 +200,8 @@ class PimpinanKampusController extends Controller
         session()->flash('flash_message', 'Solusi berhasil dikirim');
         return redirect('/pimpinan/aduan/selesai');
     }
+
+    public function tentang(){
+        return view('pimpinan.about');
+    }
 }

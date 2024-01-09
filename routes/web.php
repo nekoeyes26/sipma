@@ -29,6 +29,8 @@ Route::get('/aduan_terbaru', 'App\Http\Controllers\MahasiswaController@aduan_ter
 Route::get('/aduan_saya', 'App\Http\Controllers\MahasiswaController@aduan_saya')->name('aduan.saya');
 Route::get('/detail_aduan/{id}', 'App\Http\Controllers\MahasiswaController@detail_aduan')->name('detail_aduan');
 Route::get('/profil', 'App\Http\Controllers\MahasiswaController@profil')->name('profil');
+Route::get('/tata_cara', 'App\Http\Controllers\MahasiswaController@tata_cara')->name('tata_cara');
+Route::get('/tentang', 'App\Http\Controllers\MahasiswaController@tentang')->name('tentang');
 
 Route::get('/bakpk', 'App\Http\Controllers\BakpkController@aduan_baru');
 Route::get('/bakpk/aduan', 'App\Http\Controllers\BakpkController@aduan_baru');
@@ -52,15 +54,19 @@ Route::get('/bakpk/register/pimpinan', [BakpkController::class, 'pimpinan_regist
 Route::post('/bakpk/register/pimpinan', [BakpkController::class, 'pimpinan_store'])->name('bakpk.store.pimpinan');
 Route::get('/bakpk/tatacara', 'App\Http\Controllers\BakpkController@tatacara')->name('bakpk.tatacara');
 Route::get('/bakpk/about', 'App\Http\Controllers\BakpkController@about')->name('bakpk.about');
+Route::get('/bakpk/list_akun/mahasiswa', 'App\Http\Controllers\BakpkController@list_akun_mhs')->name('bakpk.akun.mhs');
+Route::post('/bakpk/mhs_status/{id}', 'App\Http\Controllers\BakpkController@update_status_mhs')->name('bakpk.update.status.mhs');
+Route::get('/bakpk/list_akun/pimpinan', 'App\Http\Controllers\BakpkController@list_akun_pimpinan')->name('bakpk.akun.pimpinan');
 
 Route::get('/pimpinan/login', [PimpinanKampusController::class, 'login'])->name('pimpinan.login')->middleware('guest:guard3');
 Route::post('/pimpinan/login', [PimpinanKampusController::class, 'authenticate']);
 Route::post('/pimpinan/logout', [PimpinanKampusController::class, 'logout']);
 Route::get('/pimpinan', 'App\Http\Controllers\PimpinanKampusController@aduan_diterima');
-Route::get('/pimpinan/aduan', 'App\Http\Controllers\PimpinanKampusController@aduan_diterima');
+Route::get('/pimpinan/aduan', 'App\Http\Controllers\PimpinanKampusController@aduan_diterima')->name('pimpinan.aduan');
 Route::get('/pimpinan/aduan/level1', 'App\Http\Controllers\PimpinanKampusController@aduan_level_1')->name('pimpinan.aduan.level1');
 Route::get('/pimpinan/aduan/level2', 'App\Http\Controllers\PimpinanKampusController@aduan_level_2')->name('pimpinan.aduan.level2');
 Route::get('/pimpinan/aduan/level3', 'App\Http\Controllers\PimpinanKampusController@aduan_level_3')->name('pimpinan.aduan.level3');
 Route::get('/pimpinan/aduan/selesai', 'App\Http\Controllers\PimpinanKampusController@aduan_selesai')->name('pimpinan.aduan.selesai');
 Route::get('/pimpinan/aduan/detail/{id}', 'App\Http\Controllers\PimpinanKampusController@detail_aduan')->name('pimpinan.detail_aduan');
 Route::post('/pimpinan/aduan/solusi/post/{id}', 'App\Http\Controllers\PimpinanKampusController@kirim_solusi')->name('pimpinan.kirim_solusi');
+Route::get('/pimpinan/tentang', 'App\Http\Controllers\PimpinanKampusController@tentang')->name('pimpinan.tentang');
