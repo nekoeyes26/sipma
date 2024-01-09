@@ -21,17 +21,17 @@
             <h1>PROFIL LENGKAP</h1>
             <table>
               <tr>
-                <td  style="width: 600px;"><img src="assets/img/foto.jpg" alt="Default"></td>
+                <td  style="width: 600px;"><img src="img/foto.jpg" alt="Default"></td>
                 <td  style="width: 700px;">
                   <div class="Bio">
                     <p>Nama</p>
-                    <input class="profil-ket" name="first" type="text" value="Ardhilla Eka" disabled>
+                    <input class="profil-ket" name="first" type="text" value="{{ $mahasiswa->nama }}" disabled>
                     <p>NIM</p>
-                    <input class="profil-ket" name="first" type="text" value="4.33.2.1.04" disabled>
+                    <input class="profil-ket" name="first" type="text" value="{{ $mahasiswa->nim }}" disabled>
                     <p>Jurusan</p>
-                    <input class="profil-ket" name="first" type="text" value="Teknik Elektro" disabled>
+                    <input class="profil-ket" name="first" type="text" value="{{ $mahasiswa->jurusan }}" disabled>
                     <p>Prodi</p>
-                    <input class="profil-ket" name="first" type="text" value="Teknologi Rekayasa Komputer" disabled>
+                    <input class="profil-ket" name="first" type="text" value="{{ $mahasiswa->prodi }}" disabled>
                   </div>
                 </td>
               </tr>

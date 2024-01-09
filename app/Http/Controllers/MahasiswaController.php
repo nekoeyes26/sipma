@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aduan;
+use App\Models\Mahasiswa;
 use App\Models\TransaksiAduan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -177,5 +178,21 @@ class MahasiswaController extends Controller
         ->first();
 
         return view('detail_aduan', compact('aduan'));
+    }
+
+    public function profil()
+    {
+        // Cek apakah pengguna sudah login atau belum
+        if (!Auth::guard('guard2')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/login');
+        }
+
+        // Mengambil data mahasiswa yang sedang login
+        $mahasiswa = Mahasiswa::select('nama', 'nim', 'jurusan', 'prodi')
+            ->find(Auth::guard('guard2')->user()->id_mahasiswa);
+
+        // Menampilkan halaman profil dengan data mahasiswa
+        return view('profil', compact('mahasiswa'));
     }
 }
