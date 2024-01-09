@@ -33,7 +33,7 @@ Route::get('/tata_cara', 'App\Http\Controllers\MahasiswaController@tata_cara')->
 Route::get('/tentang', 'App\Http\Controllers\MahasiswaController@tentang')->name('tentang');
 
 Route::get('/bakpk', 'App\Http\Controllers\BakpkController@aduan_baru');
-Route::get('/bakpk/aduan', 'App\Http\Controllers\BakpkController@aduan_baru');
+Route::get('/bakpk/aduan', 'App\Http\Controllers\BakpkController@aduan_baru')->name('bakpk');
 Route::get('/bakpk/aduan/baru', 'App\Http\Controllers\BakpkController@aduan_baru')->name('bakpk.aduan.baru');
 Route::get('/bakpk/aduan/level1', 'App\Http\Controllers\BakpkController@aduan_level_1')->name('bakpk.aduan.level1');
 Route::get('/bakpk/aduan/level2', 'App\Http\Controllers\BakpkController@aduan_level_2')->name('bakpk.aduan.level2');

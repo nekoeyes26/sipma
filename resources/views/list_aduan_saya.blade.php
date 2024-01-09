@@ -17,7 +17,7 @@
     </style>
 </head>
 
-<body>
+<body style="margin-left: -19px">
     @include('navbar')
     @if (Session::has('flash_message'))
         <div class="alert alert-success">

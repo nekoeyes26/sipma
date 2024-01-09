@@ -8,7 +8,7 @@
     @include('stylesheet')
 </head>
 
-<body>
+<body style="margin-left: -19px">
     @include('navbar')
     <!-- Services Start -->
     <div class="container-fluid services py-5 mb-5">

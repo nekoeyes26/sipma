@@ -8,7 +8,7 @@
     @include('stylesheet')
 </head>
 
-<body>
+<body style="margin-left: -19px">
     @include('bakpk.navbar')
     <div class="container-fluid py-4 mb-5">
         <div class="container">
