@@ -195,4 +195,12 @@ class MahasiswaController extends Controller
         // Menampilkan halaman profil dengan data mahasiswa
         return view('profil', compact('mahasiswa'));
     }
+
+    public function tata_cara(){
+        return view('tatacara');
+    }
+
+    public function tentang(){
+        return view('about');
+    }
 }

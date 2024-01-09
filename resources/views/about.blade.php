@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    @include('bakpk.navbar')
+    @include('navbar')
     <!-- About Start -->
     <div class="container-fluid py-5 my-5">
         <div class="container pt-5">

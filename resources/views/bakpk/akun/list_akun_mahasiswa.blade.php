@@ -84,10 +84,12 @@
                 <div class="position-sticky">
                     <ul class="nav flex-column sidebar-menu">
                         <li class="nav-item">
-                            <a class="nav-link active text-center" href="#"> Daftar Mahasiswa </a>
+                            <a class="nav-link active text-center" href="{{ route('bakpk.akun.mhs') }}"> Daftar
+                                Mahasiswa </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="#"> Daftar Pimpinan </a>
+                            <a class="nav-link text-center" href="{{ route('bakpk.akun.pimpinan') }}"> Daftar Pimpinan
+                            </a>
                         </li>
                     </ul>
                 </div>
