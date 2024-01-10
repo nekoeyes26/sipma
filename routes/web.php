@@ -73,3 +73,6 @@ Route::get('/pimpinan/aduan/detail/{id}', 'App\Http\Controllers\PimpinanKampusCo
 Route::post('/pimpinan/aduan/solusi/post/{id}', 'App\Http\Controllers\PimpinanKampusController@kirim_solusi')->name('pimpinan.kirim_solusi');
 Route::get('/pimpinan/tentang', 'App\Http\Controllers\PimpinanKampusController@tentang')->name('pimpinan.tentang');
 Route::get('/pimpinan/aduan/download/{id}', 'App\Http\Controllers\PimpinanKampusController@download_aduan')->name('pimpinan.download.detail');
+Route::get('/pimpinan/aduan/akademik', 'App\Http\Controllers\PimpinanKampusController@aduan_akademik')->name('pimpinan.aduan.akademik');
+Route::get('/pimpinan/aduan/keuangan', 'App\Http\Controllers\PimpinanKampusController@aduan_keuangan')->name('pimpinan.aduan.keuangan');
+Route::get('/pimpinan/aduan/sarana', 'App\Http\Controllers\PimpinanKampusController@aduan_sarana')->name('pimpinan.aduan.sarana');

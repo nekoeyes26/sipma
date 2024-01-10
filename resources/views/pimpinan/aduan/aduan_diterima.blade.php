@@ -100,6 +100,21 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-center" href="{{ route('pimpinan.aduan.akademik') }}"> Aduan
+                                Akademik
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="{{ route('pimpinan.aduan.keuangan') }}"> Aduan
+                                Keuangan
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="{{ route('pimpinan.aduan.sarana') }}"> Aduan
+                                Sarana Prasarana
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-center" href="{{ route('pimpinan.aduan.selesai') }}"> Aduan Selesai
                             </a>
                         </li>

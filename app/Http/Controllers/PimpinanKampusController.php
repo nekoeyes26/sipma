@@ -220,4 +220,81 @@ class PimpinanKampusController extends Controller
         return $pdf->download('aduan_' . $aduan->id_aduan . '.pdf');
     }    
 
+    public function aduan_akademik()
+    {
+        if (!Auth::guard('guard3')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/pimpinan/login');
+        }
+
+        $data_aduan = Aduan::has('transaksi_aduan')
+        ->whereHas('transaksi_aduan', function ($query) {
+            $query->whereNotNull('tindak_lanjut')
+                ->whereNull('id_solusi');
+        })
+        ->with(['transaksi_aduan' => function ($query) {
+            $query->whereNotNull('tindak_lanjut')
+                ->whereNull('id_solusi');
+        }])
+        ->whereDoesntHave('transaksi_aduan', function ($query) {
+            $query->whereNotNull('id_solusi');
+        })
+        ->where('jenis_aduan', 'Akademik')
+        ->orderBy('id_aduan', 'desc')
+        ->simplePaginate(15);
+    
+        return view('pimpinan.aduan.aduan_akademik', compact('data_aduan'));
+    }
+
+    public function aduan_keuangan()
+    {
+        if (!Auth::guard('guard3')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/pimpinan/login');
+        }
+
+        $data_aduan = Aduan::has('transaksi_aduan')
+        ->whereHas('transaksi_aduan', function ($query) {
+            $query->whereNotNull('tindak_lanjut')
+                ->whereNull('id_solusi');
+        })
+        ->with(['transaksi_aduan' => function ($query) {
+            $query->whereNotNull('tindak_lanjut')
+                ->whereNull('id_solusi');
+        }])
+        ->whereDoesntHave('transaksi_aduan', function ($query) {
+            $query->whereNotNull('id_solusi');
+        })
+        ->where('jenis_aduan', 'Keuangan')
+        ->orderBy('id_aduan', 'desc')
+        ->simplePaginate(15);
+    
+        return view('pimpinan.aduan.aduan_keuangan', compact('data_aduan'));
+    }
+
+    public function aduan_sarana()
+    {
+        if (!Auth::guard('guard3')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/pimpinan/login');
+        }
+
+        $data_aduan = Aduan::has('transaksi_aduan')
+        ->whereHas('transaksi_aduan', function ($query) {
+            $query->whereNotNull('tindak_lanjut')
+                ->whereNull('id_solusi');
+        })
+        ->with(['transaksi_aduan' => function ($query) {
+            $query->whereNotNull('tindak_lanjut')
+                ->whereNull('id_solusi');
+        }])
+        ->whereDoesntHave('transaksi_aduan', function ($query) {
+            $query->whereNotNull('id_solusi');
+        })
+        ->where('jenis_aduan', 'Sarana Prasarana')
+        ->orderBy('id_aduan', 'desc')
+        ->simplePaginate(15);
+    
+        return view('pimpinan.aduan.aduan_sarana', compact('data_aduan'));
+    }
 }

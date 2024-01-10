@@ -96,7 +96,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="{{ route('pimpinan.aduan.level3') }}"> Aduan Level 3
+                            <a class="nav-link text-center" href="{{ route('pimpinan.aduan.level3') }}"> Aduan
+                                Level 3
                             </a>
                         </li>
                         <li class="nav-item">
@@ -105,7 +106,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-center" href="{{ route('pimpinan.aduan.keuangan') }}"> Aduan
+                            <a class="nav-link active text-center" href="{{ route('pimpinan.aduan.keuangan') }}"> Aduan
                                 Keuangan
                             </a>
                         </li>
@@ -115,8 +116,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-center" href="{{ route('pimpinan.aduan.selesai') }}"> Aduan
-                                Selesai
+                            <a class="nav-link text-center" href="{{ route('pimpinan.aduan.selesai') }}"> Aduan Selesai
                             </a>
                         </li>
                     </ul>
@@ -127,8 +127,8 @@
                 <div class="table-container">
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">List Aduan Selesai</h1>
-                        <div class="btn-group">
+                        <h1 class="h2">List Aduan Keuangan</h1>
+                        {{-- <div class="btn-group">
                             <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
                                 aria-expanded="false"> Filter Jenis Aduan </button>
                             <ul class="dropdown-menu">
@@ -151,7 +151,7 @@
                                     </label>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="input-group">
                         <input type="text" class="form-control" id="searchBox" placeholder="Cari data...">
