@@ -7,6 +7,7 @@ use App\Models\Bakpk;
 use App\Models\Mahasiswa;
 use App\Models\PimpinanKampus;
 use App\Models\TransaksiAduan;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -370,4 +371,18 @@ class BakpkController extends Controller
 
         return view('bakpk.akun.list_akun_pimpinan', compact('data_pimpinan'));
     }
+
+    public function download_aduan($id){
+        if (!Auth::guard('guard1')->check()) {
+            session()->put('url.intended', url()->current());
+            return redirect('/bakpk/login');
+        }
+    
+        // Get the Aduan data
+        $aduan = TransaksiAduan::where('id_aduan', $id)->first();
+        $pdf = Pdf::loadView('bakpk.aduan.pdf_detail', ['aduan' => $aduan]);
+    
+        // Return a response with the download link
+        return $pdf->download('aduan_' . $aduan->id_aduan . '.pdf');
+    } 
 }

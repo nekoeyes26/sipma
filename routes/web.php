@@ -31,6 +31,7 @@ Route::get('/detail_aduan/{id}', 'App\Http\Controllers\MahasiswaController@detai
 Route::get('/profil', 'App\Http\Controllers\MahasiswaController@profil')->name('profil');
 Route::get('/tata_cara', 'App\Http\Controllers\MahasiswaController@tata_cara')->name('tata_cara');
 Route::get('/tentang', 'App\Http\Controllers\MahasiswaController@tentang')->name('tentang');
+Route::get('/aduan/download/{id}', 'App\Http\Controllers\MahasiswaController@download_aduan')->name('aduan.download');
 
 Route::get('/bakpk', 'App\Http\Controllers\BakpkController@aduan_baru');
 Route::get('/bakpk/aduan', 'App\Http\Controllers\BakpkController@aduan_baru')->name('bakpk');
@@ -57,6 +58,7 @@ Route::get('/bakpk/about', 'App\Http\Controllers\BakpkController@about')->name('
 Route::get('/bakpk/list_akun/mahasiswa', 'App\Http\Controllers\BakpkController@list_akun_mhs')->name('bakpk.akun.mhs');
 Route::post('/bakpk/mhs_status/{id}', 'App\Http\Controllers\BakpkController@update_status_mhs')->name('bakpk.update.status.mhs');
 Route::get('/bakpk/list_akun/pimpinan', 'App\Http\Controllers\BakpkController@list_akun_pimpinan')->name('bakpk.akun.pimpinan');
+Route::get('/bakpk/aduan/download/{id}', 'App\Http\Controllers\BakpkController@download_aduan')->name('bakpk.download.detail');
 
 Route::get('/pimpinan/login', [PimpinanKampusController::class, 'login'])->name('pimpinan.login')->middleware('guest:guard3');
 Route::post('/pimpinan/login', [PimpinanKampusController::class, 'authenticate']);
@@ -70,3 +72,4 @@ Route::get('/pimpinan/aduan/selesai', 'App\Http\Controllers\PimpinanKampusContro
 Route::get('/pimpinan/aduan/detail/{id}', 'App\Http\Controllers\PimpinanKampusController@detail_aduan')->name('pimpinan.detail_aduan');
 Route::post('/pimpinan/aduan/solusi/post/{id}', 'App\Http\Controllers\PimpinanKampusController@kirim_solusi')->name('pimpinan.kirim_solusi');
 Route::get('/pimpinan/tentang', 'App\Http\Controllers\PimpinanKampusController@tentang')->name('pimpinan.tentang');
+Route::get('/pimpinan/aduan/download/{id}', 'App\Http\Controllers\PimpinanKampusController@download_aduan')->name('pimpinan.download.detail');

@@ -17,7 +17,7 @@ class Solusi extends Model
         return $this->hasOne('App\Models\TransaksiAduan', 'id_solusi');
     }
 
-    public function pimmpinan_kampus()
+    public function pimpinan_kampus()
     {
         return $this->belongsTo('App\Models\PimpinanKampus', 'id_pimpinan');
     }

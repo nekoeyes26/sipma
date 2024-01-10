@@ -52,6 +52,13 @@
                     </p>
                     <!-- <input type="text" id="tanggalSolusi" class="form-control" value="Tanggal Solusi Diterima" readonly> -->
                 </div>
+                @if (optional(optional($aduan->transaksi_aduan->first())->solusi)->solusi)
+                    <div class="col-md-12 text-center">
+                        <a href="{{ route('aduan.download', ['id' => $aduan->id_aduan]) }}"
+                            class="btn btn-primary">Download Aduan</a>
+                    </div>
+                @endif
+
             </div>
         </div>
     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Aduan;
 use App\Models\Mahasiswa;
 use App\Models\TransaksiAduan;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -203,4 +204,17 @@ class MahasiswaController extends Controller
     public function tentang(){
         return view('about');
     }
+
+    public function download_aduan($id){
+        if (!Auth::guard('guard2')->check()) {
+            return redirect('/login');
+        }
+    
+        // Get the Aduan data
+        $aduan = TransaksiAduan::where('id_aduan', $id)->first();
+        $pdf = Pdf::loadView('pdf_download', ['aduan' => $aduan]);
+    
+        // Return a response with the download link
+        return $pdf->download('aduan_' . $aduan->id_aduan . '.pdf');
+    } 
 }
