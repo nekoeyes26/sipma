@@ -83,6 +83,11 @@
                         {{ $aduan->tindak_lanjut !== null ? 'Edit' : 'Kirim' }} Tindak Lanjut
                     </button>
                 </div>
+            @else
+                <div class="col-md-12 text-center">
+                    <a href="{{ route('bakpk.download.detail', ['id' => $aduan->id_aduan]) }}"
+                        class="btn btn-primary">Download Aduan</a>
+                </div>
             @endif
 
             </form>
