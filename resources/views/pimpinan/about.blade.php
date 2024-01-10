@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
                     <h5 class="text-primary">Tentang Kami</h5>
-                    <h1 class="mb-4">About Sistem Informasi Pengaduan Mahasiswa</h1>
+                    <h1 class="mb-4">Tentang Sistem Informasi Pengaduan Mahasiswa</h1>
                     <p>Sebuah sistem yang dirancang untuk membantu mahasiswa dalam mengajukan keluhan atau pengaduan
                         terkait berbagai hal di lingkungan kampus.</p>
                     <p class="mb-4">Membantu mahasiswa dalam mengajukan pengaduan terkait layanan akademik, keuangan,
