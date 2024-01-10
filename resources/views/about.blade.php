@@ -16,10 +16,10 @@
             <div class="row g-5">
                 <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
                     <div class="h-100 position-relative">
-                        <img src="{{ asset('img/about-1.jpg') }}" class="img-fluid w-75 rounded" alt=""
+                        <img src="{{ asset('img/about-1.jpeg') }}" class="img-fluid w-75 rounded" alt=""
                             style="margin-bottom: 25%;">
                         <div class="position-absolute w-75" style="top: 25%; left: 25%;">
-                            <img src="{{ asset('img/about-2.jpg') }}" class="img-fluid w-100 rounded" alt="">
+                            <img src="{{ asset('img/about-2.jpeg') }}" class="img-fluid w-100 rounded" alt="">
                         </div>
                     </div>
                 </div>
