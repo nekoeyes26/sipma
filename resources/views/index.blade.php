@@ -26,8 +26,10 @@
                             <h6 class="text-secondary h4 animated fadeInUp">SIPMA</h6>
                             <h1 class="text-white display-1 mb-4 animated fadeInRight">Sistem Informasi Pengaduan
                                 Mahasiswa</h1>
-                            <p class="mb-4 text-white fs-5 animated fadeInDown">Sistem Informasi Pengaduan Mahasiswa hadir untuk 
-                                mendukung transparansi dan efisiensi. Sampaikan keluhan atau masukan Anda dengan mudah dan cepat.</p>
+                            <p class="mb-4 text-white fs-5 animated fadeInDown">Sistem Informasi Pengaduan Mahasiswa
+                                hadir untuk
+                                mendukung transparansi dan efisiensi. Sampaikan keluhan atau masukan Anda dengan mudah
+                                dan cepat.</p>
                             <a href="" class="me-2"><button type="button"
                                     class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Baca
                                     Selengkapnya</button></a>
@@ -44,8 +46,10 @@
                             <h6 class="text-secondary h4 animated fadeInUp">SIPMA</h6>
                             <h1 class="text-white display-1 mb-4 animated fadeInLeft">Silahkan laporkan keluhan Anda
                             </h1>
-                            <p class="mb-4 text-white fs-5 animated fadeInDown">Kami menyambut Anda di Sistem Informasi Pengaduan Mahasiswa, 
-                                platform yang dirancang untuk mendengar dan menyelesaikan setiap permasalahan yang dihadapi mahasiswa</p>
+                            <p class="mb-4 text-white fs-5 animated fadeInDown">Kami menyambut Anda di Sistem Informasi
+                                Pengaduan Mahasiswa,
+                                platform yang dirancang untuk mendengar dan menyelesaikan setiap permasalahan yang
+                                dihadapi mahasiswa</p>
                             <a href="" class="me-2"><button type="button"
                                     class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Baca
                                     Selengkapnya</button></a>
@@ -87,7 +91,8 @@
                         terkait berbagai hal di lingkungan kampus.</p>
                     <p class="mb-4">Membantu mahasiswa dalam mengajukan pengaduan terkait layanan akademik, keuangan,
                         sarana dan prasarana, serta berbagai permasalahan lainnya di lingkungan kampus</p>
-                    <a href="" class="btn btn-secondary rounded-pill px-5 py-3 text-white">Detail Selengkapnya</a>
+                    <a href="" class="btn btn-secondary rounded-pill px-5 py-3 text-white">Detail
+                        Selengkapnya</a>
                 </div>
             </div>
         </div>
@@ -121,7 +126,7 @@
                             <div class="services-content-icon">
                                 <i class="fa fa-file-code fa-7x mb-4 text-primary"></i>
                                 <h4 class="mb-3">Proses Tindak Lanjut</h4>
-                                <p class="mb-4">Setelah Aduan anda terkirim kami akan melakukan 
+                                <p class="mb-4">Setelah Aduan anda terkirim kami akan melakukan
                                     proses tindak lanjut secara bertahap.
                                 </p>
                                 <!-- <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a> -->
@@ -169,11 +174,11 @@
                     <div class="team-content">
                         <div class="team-img-icon">
                             <div class="team-img rounded-circle">
-                                <img src="img/team-1.jpg" class="img-fluid w-100 rounded-circle" alt="">
+                                <img src="img/team-1.jpeg" class="img-fluid w-100 rounded-circle" alt="">
                             </div>
                             <div class="team-name text-center py-3">
-                                <h4 class="">Nama</h4>
-                                <p class="m-0">Bagian</p>
+                                <h4 class="">Ardhilla Eka Windiarti</h4>
+                                <p class="m-0">4.33.21.1.04</p>
                             </div>
                             <div class="team-icon d-flex justify-content-center pb-4">
                                 <a class="btn btn-square btn-secondary text-white rounded-circle m-1"
@@ -192,11 +197,11 @@
                     <div class="team-content">
                         <div class="team-img-icon">
                             <div class="team-img rounded-circle">
-                                <img src="img/team-2.jpg" class="img-fluid w-100 rounded-circle" alt="">
+                                <img src="img/team-2.jpeg" class="img-fluid w-100 rounded-circle" alt="">
                             </div>
                             <div class="team-name text-center py-3">
-                                <h4 class="">Nama</h4>
-                                <p class="m-0">Bagian</p>
+                                <h4 class="">Bhatinden Sejiarga Ergun Giortagma</h4>
+                                <p class="m-0">4.33.21.1.06</p>
                             </div>
                             <div class="team-icon d-flex justify-content-center pb-4">
                                 <a class="btn btn-square btn-secondary text-white rounded-circle m-1"
@@ -215,11 +220,11 @@
                     <div class="team-content">
                         <div class="team-img-icon">
                             <div class="team-img rounded-circle">
-                                <img src="img/team-3.jpg" class="img-fluid w-100 rounded-circle" alt="">
+                                <img src="img/team-3.jpeg" class="img-fluid w-100 rounded-circle" alt="">
                             </div>
                             <div class="team-name text-center py-3">
-                                <h4 class="">Nama</h4>
-                                <p class="m-0">Bagian</p>
+                                <h4 class="">Indra Herdiana</h4>
+                                <p class="m-0">4.33.21.1.13</p>
                             </div>
                             <div class="team-icon d-flex justify-content-center pb-4">
                                 <a class="btn btn-square btn-secondary text-white rounded-circle m-1"
@@ -238,11 +243,11 @@
                     <div class="team-content">
                         <div class="team-img-icon">
                             <div class="team-img rounded-circle">
-                                <img src="img/team-4.jpg" class="img-fluid w-100 rounded-circle" alt="">
+                                <img src="img/team-4.jpeg" class="img-fluid w-100 rounded-circle" alt="">
                             </div>
                             <div class="team-name text-center py-3">
-                                <h4 class="">Nama</h4>
-                                <p class="m-0">Bagian</p>
+                                <h4 class="">Muhamad Alif Jauzi </h4>
+                                <p class="m-0">4.33.21.1.17</p>
                             </div>
                             <div class="team-icon d-flex justify-content-center pb-4">
                                 <a class="btn btn-square btn-secondary text-white rounded-circle m-1"

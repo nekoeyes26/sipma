@@ -52,8 +52,8 @@
                                     alt="">
                             </div>
                             <div class="team-name text-center py-3">
-                                <h4 class="">Full Name</h4>
-                                <p class="m-0">Designation</p>
+                                <h4 class="">Ardhilla Eka Windiarti</h4>
+                                <p class="m-0">4.33.21.1.04</p>
                             </div>
                             <div class="team-icon d-flex justify-content-center pb-4">
                                 <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
@@ -76,8 +76,8 @@
                                     alt="">
                             </div>
                             <div class="team-name text-center py-3">
-                                <h4 class="">Full Name</h4>
-                                <p class="m-0">Designation</p>
+                                <h4 class="">Bhatinden Sejiarga Ergun Giortagma</h4>
+                                <p class="m-0">4.33.21.1.06</p>
                             </div>
                             <div class="team-icon d-flex justify-content-center pb-4">
                                 <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
@@ -100,8 +100,8 @@
                                     alt="">
                             </div>
                             <div class="team-name text-center py-3">
-                                <h4 class="">Full Name</h4>
-                                <p class="m-0">Designation</p>
+                                <h4 class="">Indra Herdiana</h4>
+                                <p class="m-0">4.33.21.1.13</p>
                             </div>
                             <div class="team-icon d-flex justify-content-center pb-4">
                                 <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
@@ -124,8 +124,8 @@
                                     alt="">
                             </div>
                             <div class="team-name text-center py-3">
-                                <h4 class="">Full Name</h4>
-                                <p class="m-0">Designation</p>
+                                <h4 class="">Muhamad Alif Jauzi </h4>
+                                <p class="m-0">4.33.21.1.17</p>
                             </div>
                             <div class="team-icon d-flex justify-content-center pb-4">
                                 <a class="btn btn-square btn-secondary text-white rounded-circle m-1"
