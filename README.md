@@ -13,6 +13,7 @@ cd <ke folder sipma>
 composer install
 copy .env.example .env
 php artisan key:generate
+composer require barryvdh/laravel-dompdf
 ```
 
 Penting (Ganti nama database)
